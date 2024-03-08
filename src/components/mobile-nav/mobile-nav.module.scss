@@ -1,0 +1,15 @@
+@import url('https://fonts.cdnfonts.com/css/spline-sans-mono');
+
+.mobile-nav-container {
+    font-family: 'Spline Sans Mono', sans-serif;
+    display: block;
+    overflow: scroll;
+    white-space: nowrap;
+
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+
+    &::-webkit-scrollbar {
+        display: none;  /* Safari and Chrome */
+    }
+}

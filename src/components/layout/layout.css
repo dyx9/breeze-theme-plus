@@ -1,0 +1,241 @@
+/* General Rules */
+* {
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.mobile-header {
+  display: none;
+}
+
+.cover {
+  width: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:visited {
+  color: inherit;
+}
+
+
+/* General Layout */
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.sidebar {
+  width: 25%;
+  height: 100vh;
+  background-color: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.content {
+  width: 75%;
+  height: 100vh;
+  background-color: bisque;
+  padding: 10px 16px;
+  overflow: auto;
+}
+
+
+
+/* Detailed Rules for Sidebar */
+
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+}
+
+.sidebar a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+.sidebar .interactive-area-1 {
+  margin-top: auto;
+  background-color: #7eddff;
+}
+
+.sidebar .side-bar-footer {
+  margin-top: auto;
+  background-color: #fff67b;
+}
+
+/* side bar logo */
+.sidebar .menu .logo a {
+  font-size: 32px;
+}
+
+
+/* Detailed Rules for Main Content */
+
+/* blog block */
+.blog-block {
+  display: flex;
+  padding: 16px;
+  background-color: lightcyan;
+  margin: 0 35px;
+  padding: 30px 0;
+  border-bottom: 1px solid hsla(0,0%,50%,.12);
+}
+
+/* blog content container */
+.blog-block .non-image-part {
+  position: relative;
+  width: 70%;
+}
+
+/* blog title */
+.blog-block .non-image-part a {
+  font-size: 32px;
+}
+
+/* blog time */
+.blog-block .non-image-part .time {
+  position: absolute;
+  bottom: 0;
+}
+
+/* blog image container */
+.blog-block .image-part {
+  width: 30%;
+}
+
+/* blog image */
+.blog-block .image-part .img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.content .blog li p, .content .blog li a {
+  padding: 8px;
+}
+
+
+
+
+
+
+
+
+/* Responsive Design for Mobile */
+@media only screen and (max-width: 768px) {
+
+
+  :root {
+      --sidebar-width: 40%;
+      --header-height: 60px;
+  }
+
+  /* inside side bar */
+  .sidebar {
+      padding-top: var(--header-height);
+      position: fixed;
+      left: calc(var(--sidebar-width) * -1);
+      transition: .5s;
+      z-index: 999;
+      height: 100%;
+  }
+
+  .sidebar.active {
+      display: flex;
+      left: 0;
+      width: var(--sidebar-width);
+      transition: 0.5s;
+  }
+
+  .sidebar > .menu > .logo{
+      display: none;
+  }
+
+  .mobile-header {
+      background-color: #f1f1f1;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: var(--header-height);
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 999;
+      
+  }
+
+
+  /* inside content */
+
+  .content {
+      padding: var(--header-height) 0;
+      width: 100%;
+      height: 100%;
+      transition: .5s;
+  }
+
+
+  .cover.active {
+      position: fixed;
+      left: var(--sidebar-width);
+      width: calc(100% - var(--sidebar-width));
+      height: 100%;
+      background-color: rgba(42, 42, 42, 0.5);
+      backdrop-filter: blur(3px);
+      z-index: 998;
+      transition: .2s ;
+      transition-delay: 0.3s;
+  }
+
+  /* change the blog list layout for mobile viewpoint */
+  .blog-block {
+      flex-direction: column;
+      padding: 0;
+      margin: 0;
+  }
+
+  /* blog content container */
+  .blog-block .non-image-part {
+      width: 100%;
+      order: 2;
+      padding: 15px 20px;
+  }
+
+  /* blog time */
+  .blog-block .non-image-part .time {
+      position: unset;
+  }
+
+  /* blog image container */
+  .blog-block .image-part {
+      width: 100%;
+      order: 1;
+  }
+
+  /* blog image */
+  .blog-block .image-part img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+  }
+
+
+}

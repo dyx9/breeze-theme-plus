@@ -1,0 +1,41 @@
+@use '../../../sass/variables' as *;
+
+.menu {
+
+  a {
+    display: block;
+    color: black;
+    padding: 16px;
+    border-right: 4px solid white;
+    transition: .2s;
+  }
+  
+  a.active {
+    // background: linear-gradient(to right, rgba(0, 0, 0, 0), #04AA6D);
+    // color: white;
+    background: $theme-colour;
+    border-right: 4px solid $theme-colour-highlight;
+  
+  }
+  
+  a:hover:not(.active) {
+    background: $theme-colour;
+  }
+  
+  .logo a {
+    font-size: 32px;
+  }
+
+  .logo-active {
+    font-size: 32px;
+    border-right: 4px solid $theme-colour-highlight;
+  }
+
+  @media only screen and (max-width: $mobile-device-max-width) {
+    .logo {
+      display: none;
+    }
+  }
+
+}
+

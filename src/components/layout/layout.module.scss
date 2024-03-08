@@ -1,0 +1,25 @@
+@use '../../sass/variables' as *;
+
+
+.container {
+  font-family: $general-font-family;
+  font-size: 16px;
+  display: flex;
+  flex-direction: row;
+
+  .mobile-nav {
+    display: none;
+  }
+
+  @media only screen and (max-width: $mobile-device-max-width) {
+    flex-direction: column;
+
+    .mobile-nav {
+      display: block;
+      margin-top: $header-height;
+      padding: 1em;
+    }
+  }
+
+}
+

@@ -1,0 +1,23 @@
+@use '../../../sass/variables' as *;
+
+
+.social-link-container {
+
+  margin-top: 16px;
+
+  a {
+    display: inline;
+    white-space: nowrap;
+    transition: 0.2s;
+    padding: 16px;
+
+    &:visited {
+      color: black;
+    }
+
+    &:hover {
+      color: $link-colour-visited;
+    }
+  }
+
+}

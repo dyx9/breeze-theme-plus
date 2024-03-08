@@ -1,0 +1,19 @@
+@use '../../sass/variables' as *;
+
+.content {
+    width: 75%;
+    height: 100vh;
+    padding-bottom: $page-padding-bottom;
+    overflow: auto;
+  }
+  
+  
+  /* Responsive Design for Mobile */
+  @media only screen and (max-width: $mobile-device-max-width) {
+  
+    .content {
+        width: 100%;
+        height: 100%;
+        transition: .5s;
+    }
+  }

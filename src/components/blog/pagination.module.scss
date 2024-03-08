@@ -1,0 +1,24 @@
+@use '../../sass/variables' as *;
+
+.pagination-container {
+    display: flex;
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    padding: 5%;
+
+    a {
+      background-color: $theme-colour;
+      border-radius: 8px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      transition: $universal-hover-time;
+
+      &:hover {
+        transition: $universal-hover-time;
+        color: $theme-colour-highlight;
+      }
+    }
+}

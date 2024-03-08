@@ -1,0 +1,161 @@
+@use '../sass/base' as *;
+@use '../sass/variables' as *;
+@import url('https://fonts.cdnfonts.com/css/spline-sans-mono');
+
+
+.contact-container {
+    font-family: Spline Sans Mono, monospace;
+    font-size: 1rem;
+    margin: 2em;
+
+    #line-one {
+        font-size: $line-one-font-size;
+        margin: $line-one-margin;
+        
+        @media only screen and (max-width: $mobile-device-max-width) {
+            display: none;
+        }
+    }
+
+    .content-mobile {
+        display: none;
+    }
+
+    @media only screen and (max-width: $mobile-device-max-width) {
+        .content-desktop {
+            display: none;
+        }
+        .content-mobile {
+            display: block;
+        }
+    }
+
+
+
+    p {
+        margin: 1em 0 1em 0;
+    }
+
+    .form-container {
+        margin: 0 auto;
+        max-width: 80%;
+        padding: 40px;
+        border: 5px solid $theme-colour-highlight;
+        // background: $theme-colour;
+        border-radius: 10px;
+        
+
+        button {
+            color: black;
+            display: block;
+            margin-left: auto;
+            margin-right: 0;
+            border: none;
+            background-color: $theme-colour;
+            padding: 1em 2em;
+            border-radius: 0.5em;
+            transition: 0.3s;
+
+            @media only screen and (min-width: $mobile-device-max-width) {
+                &:hover {
+                    background-color: $theme-colour-highlight;
+                    transition: 0.3s;
+                    color: white;
+                }
+            }
+
+
+        }
+
+        @media only screen and (max-width: $mobile-device-max-width) {
+            max-width: 100%;
+            padding: 1.5em 1em;
+        }
+    }
+
+    .input-area {
+        position: relative;
+
+        input, textarea{
+            border-radius: 0;
+            width: 100%;
+            padding: 10px 0;
+            font-size: 16px;
+            color: black;
+            margin-bottom: 30px;
+            border: none;
+            // padding: 1em;
+            // background-color: $theme-colour;
+            // border-radius: 1em;
+            border-bottom: 3px dotted black;
+            outline: none;
+            background-color: transparent;
+
+            &:focus ~ label,
+            &:valid ~ label {
+                top: -2.2em;
+                left: 0;
+                color: $theme-colour-highlight;
+                font-size: 12px;            
+            }
+
+            &:focus {
+                border-bottom: 3px dotted $theme-colour-highlight;
+            }
+
+            &:valid {
+                border-bottom: 3px solid $theme-colour-highlight;
+            }
+
+            &:not(:focus):valid {
+                border-bottom: 3px solid grey;
+            }
+            
+        }
+
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover, 
+        input:-webkit-autofill:focus, 
+        input:-webkit-autofill:active{
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: black;
+            transition: background-color 5000s ease-in-out 0s;
+            box-shadow: inset 0 0 20px 20px transparent;
+        }
+
+        textarea {
+            min-width: 100%;
+            min-height: 10em;
+            resize: none;
+            // background-color: bisque;
+            border: 3px dotted black;
+            padding: 0.5em;
+            border-radius: 0.5em;
+
+            &:focus {
+                border: 3px dotted $theme-colour-highlight;
+            }
+
+            &:valid {
+                border: 3px solid $theme-colour-highlight;
+            }
+
+            &:not(:focus):valid {
+                border: 3px solid grey;
+            }
+        }
+
+        label {
+            position: absolute;
+            top:0;
+            left: 0.5em;
+            padding: 10px 0;
+            font-size: 16px;
+            color: rgba(0, 0, 0, 0.608);
+            pointer-events: none;
+            transition: .3s;
+        }
+
+    }
+
+}

@@ -1,0 +1,62 @@
+@import url('https://fonts.cdnfonts.com/css/spline-sans-mono');
+
+$general-font-family: "Lato", sans-serif;
+
+$line-one-font-size: xx-large;
+$line-one-margin: 0 0 2em 0;
+
+$sidebar-width: 100%;
+$header-height: 6vh;
+$mobile-logo-size: 1.2em;
+$page-padding-top: 1em;
+$page-padding-bottom: 2em;
+
+$mobile-device-max-width: 960px;
+
+// colour palette
+$theme-colour: rgba(173, 230, 204, 0.3);
+$theme-colour-highlight: #2A9D8F;
+$link-colour-unvisited: $theme-colour-highlight;
+$link-colour-visited: $theme-colour-highlight;
+
+// animation
+$universal-hover-time: 0.5s;
+
+// speccification for posts
+$font-family: Georgia, 'Times New Roman', Times, serif;
+$post-title-font-size: 3rem;
+$post-title-margin: 10px 35px;
+
+$post-content-margin: 50px 35px 0 35px;
+$post-content-font-weight: lighter;
+$post-content-line-height: 1.6;
+$post-content-font-size: 1.2rem;
+
+$h1-font-size: 2rem;
+$h1-margin: 20px 0 5px 0.2em;
+
+$h2-font-size: 1.6rem;
+$h2-margin: 15px 0 5px 0.5em;
+
+$h3-font-size: 1.4rem;
+$h3-margin: 12px 0 5px 0.5em;
+
+$h4-font-size: 1.2rem;
+$h4-margin: 10px 0 5px 0.5em;
+
+$post-contnet-list-style: initial;
+$post-contnet-list-margin: 0 0.5px 0.1em 0.5em;
+
+$code-font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$code-bg-colour: rgb(251,242,233);
+
+
+// for mobile 
+$mobile-post-title-font-size: 2rem;
+$mobile-post-title-margin: 30px 20px 0 20px;
+$mobile-h1-font-size: 1.6rem;
+$mobile-h2-font-size: 1.3rem;
+$mobile-h3-font-size: 1.1rem;
+$mobile-h4-font-size: 1rem;
+$mobile-post-content-font-size: 1rem;
+$mobile-post-content-margin: 30px 10px 0 10px;

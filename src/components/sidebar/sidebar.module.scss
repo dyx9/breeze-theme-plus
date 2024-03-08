@@ -1,0 +1,104 @@
+@use '../../sass/variables' as *;
+
+
+.sidebar {
+	font-family: $general-font-family;
+	width: 25%;
+	height: 100vh;
+	padding-top: $page-padding-top;
+	padding-bottom: $page-padding-bottom;
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	text-align: right;
+	user-select: none;
+	box-shadow: 10px 0 16px rgb(0 0 0 / 12%);
+
+
+	/* Detailed Rules for Sidebar */
+
+	.interactive-area {
+		// position: relative;
+		max-height: 40%;
+		overflow: scroll;
+    	margin: auto 16px;
+		background-color: $theme-colour;
+		border-radius: 10px;
+		// transform: translateX(-100%);
+
+		// &.active {
+		// 	animation: slide-in 0.5s forwards;
+		// }
+
+		// @keyframes slide-in {
+		// 	100% { transform: translateX(0%); }
+		// }
+
+		// @keyframes slide-out {
+		// 	0% { transform: translateX(0%); }
+		// 	100% { transform: translateX(-100%); }
+		// }
+
+	}
+
+}
+
+
+@media only screen and (max-width: $mobile-device-max-width) {
+    .sidebar {
+        padding-top: $header-height;
+        position: fixed;
+        top: calc(100vh * -1); /* Adjust this value based on your sidebar's height */
+        transition: .5s;
+        z-index: 999;
+        height: 100vh; /* Define your sidebar's height */
+        width: 100%; /* Full width */
+		background-color: rgba(255, 255, 255, 0.95);
+        // background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgb(255, 255, 255));
+
+        &.active {
+            display: flex;
+            top: 0; /* Adjust if you want the sidebar to start sliding down from a different position */
+            transition: 0.5s;
+        }
+
+        & > .menu > .logo{
+            display: none;
+        }
+    }
+}
+
+
+
+.mobile-header {
+	display: none;
+	background-color: rgba(255, 255, 255, 0.92);
+	box-shadow: 10px 0 16px rgb(0 0 0 / 12%);
+	.logo a{
+		font-size: $mobile-logo-size;
+		margin-left: 0.5em;
+	}
+
+	.nav-button {
+		border: none;
+		height: $header-height;
+		width: $header-height;
+		background-color: transparent;
+		color: $theme-colour-highlight;
+		font-size: 1.3em;
+	}
+
+	/* Responsive Design for Mobile */
+	@media only screen and (max-width: $mobile-device-max-width) {
+		padding: 0 2% 0 2%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: $header-height;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		z-index: 999;
+	}
+}

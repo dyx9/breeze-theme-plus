@@ -1,0 +1,67 @@
+@use '../sass/base' as *;
+@use '../sass/variables' as *;
+@import url('https://fonts.cdnfonts.com/css/spline-sans-mono');
+
+
+.about-container {
+    font-family: Spline Sans Mono, monospace;
+    font-size: 1rem;
+    margin: 2em;
+
+    #line-one {
+        font-size: $line-one-font-size;
+        margin: $line-one-margin;
+        
+        @media only screen and (max-width: $mobile-device-max-width) {
+            display: none;
+        }
+    }
+
+
+    p {
+        margin: 1em 0 1em 0;
+    }
+
+    a {
+        font-weight: 900;
+        border-bottom: 0.15em solid $theme-colour-highlight; /* Or whatever color you want */
+        // background: linear-gradient(180deg, rgba(255, 255, 255, 0) 85%, $theme-colour-highlight 85%);
+        text-decoration: none;
+        transition: 0.3s;
+
+        @media only screen and (min-width: $mobile-device-max-width) {
+            &:hover {
+                transition: 0.3s;
+                padding-bottom: 0.2em;
+                border-bottom: 0.15em solid $theme-colour-highlight; /* Or whatever color you want */
+            }
+        }
+    }
+
+
+    .resume-container {
+
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center; /* Add this for vertical centering */
+
+        a {
+            display: flex; /* Use flexbox for alignment */
+            justify-content: center; /* Center text horizontally */
+            align-items: center; /* Center text vertically */
+            font-weight: 900;
+            min-width: 25vw; /* Fixed width */
+            min-height: 10vh; /* Fixed height */
+            padding: 0; 
+            background-color: $theme-colour;
+            border-radius: 1em;
+
+            &:hover {
+                color: $theme-colour-highlight;
+                transition: 0.5s;
+            }
+            transition: 0.5s;
+        }
+
+    }
+}
